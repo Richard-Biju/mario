@@ -410,6 +410,47 @@ void mario_wins_level(){
      * ###   #
      * 
      * Make sure to check the range! The stairs can only be so low and the console can only print so many lines! **/
+    int stairs;
+    while (1) {
+        stairs = get_int("Please enter the stairs Mario climb to finish the level?\n ");
+        if (stairs >= 1 && stairs <= 20) {
+            break;
+        } else {
+            printf("Please enter the stairs between 1 and 20.\n");
+        }
+    }
 
-    get_int("How many stairs should mario climb to finish the level?");
+    for (int i = 0; i < stairs; i++) {
+        for (int j = 0; j <= stairs - i; j++) {
+            printf(" ");
+        }
+        for (int j = 0; j <= i + 1; j++) {
+            printf("#");
+        }
+        printf("   ");
+        if (i == 0) {
+            printf("|>\n");
+        } else if (i == stairs - 1) {
+            printf("#\n");
+        } else {
+            printf("|\n");
+        }
+    }
 }
+    
+    
+
+        
+   
+
+
+
+
+    
+    
+
+
+    
+
+
+    
